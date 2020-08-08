@@ -12,4 +12,4 @@ call git add -A
 call git commit -m "%message%"
 call git push origin %branch%
 
-set /p temp="Completed successfully, press <Enter> to exit"
+set /p temp="Finished, press <Enter> to exit"
