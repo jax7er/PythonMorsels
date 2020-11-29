@@ -3,7 +3,7 @@ from typing import Iterable
 
 
 def format_ranges(numbers: Iterable):
-    nums = list(sorted(numbers))  # sort the numbers
+    nums = list(numbers)  # sort the numbers
 
     ranges = []
 
