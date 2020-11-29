@@ -3,7 +3,7 @@ from typing import Iterable
 
 
 def format_ranges(numbers: Iterable):
-    nums = list(numbers)  # sort the numbers
+    nums = list(numbers)  # make new numbers list to modify
 
     ranges = []
 
@@ -15,11 +15,14 @@ def format_ranges(numbers: Iterable):
         while (end + 1) in nums:
             end = nums.pop(nums.index(end + 1))
 
-        # append a set to remove duplicate start/end
-        ranges.append({start, end})
+        # use a set to remove duplicate start/end
+        ranges.append(list(sorted({start, end})))
     
     # use mean of ranges to sort
     ranges.sort(key=mean)
 
     # format numbers/ranges
-    return ",".join("-".join(map(str, sorted(r))) for r in ranges)
+    return ",".join(
+        "-".join(map(str, r)) 
+        for r in ranges
+    )
